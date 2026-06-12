@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# AI crawlers — currently allowed; uncomment to opt out:
+# User-agent: GPTBot
+# Disallow: /
+# User-agent: CCBot
+# Disallow: /
+
+Sitemap: https://www.novex-international.com/sitemap.xml

@@ -11,9 +11,10 @@
 <meta property="og:url" content="https://www.novex-international.com/">
 <link rel="canonical" href="https://www.novex-international.com/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23121310'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='40' font-style='italic' text-anchor='middle' fill='%23c2491d'%3EN%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<!-- Fonts are self-hosted (assets/fonts/) — no requests to Google or other third parties on page load. -->
+<!-- INTERNAL TODO (not shown on site, not legal advice): Check with counsel whether an EU representative under Art. 27 GDPR is required for current operations. -->
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/besley-normal-latin.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/fonts/besley-italic-latin.woff2">
 <script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
 {
@@ -28,6 +29,11 @@
 }
 </script>
 <style>
+/* ===== Self-hosted Besley (variable 400–600), subset latin + latin-ext ===== */
+@font-face{font-family:'Besley';font-style:normal;font-weight:400 600;font-display:swap;src:url('assets/fonts/besley-normal-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Besley';font-style:normal;font-weight:400 600;font-display:swap;src:url('assets/fonts/besley-normal-latinext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Besley';font-style:italic;font-weight:400 600;font-display:swap;src:url('assets/fonts/besley-italic-latin.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Besley';font-style:italic;font-weight:400 600;font-display:swap;src:url('assets/fonts/besley-italic-latinext.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 :root{
   --ink:#121310;--panel:#1c1d1a;
   --paper:#f2efe8;
@@ -709,7 +715,7 @@ footer{color:var(--muted);padding:0 var(--pad-x) 48px}
   <h4>Represented by</h4>
   <p>Manuel Schuetterle, Managing Director</p>
   <h4>Contact</h4>
-  <p>Email: contact [at] novex-international.com — or via the inquiry form on this website.</p>
+  <p>Email: <a class="jsmail" href="#contact">[email address — please enable JavaScript]</a> — or via the inquiry form on this website.</p>
   <h4>Responsible for content</h4>
   <p>Manuel Schuetterle, address as above.</p>
   <h4>Disclaimer — liability for content</h4>
@@ -726,15 +732,15 @@ footer{color:var(--muted);padding:0 var(--pad-x) 48px}
 <dialog class="legal" id="dlg-privacy" aria-labelledby="dlg-privacy-h">
   <h3 id="dlg-privacy-h">Privacy Policy (GDPR)</h3>
   <h4>Controller (Art. 4 No. 7 GDPR)</h4>
-  <p>NOVEX INTERNATIONAL LLC, 3834 Powerline Road, Fort Lauderdale, FL 33309, USA, represented by Manuel Schuetterle. Contact: contact [at] novex-international.com. As a US company offering services to persons in the EU, we apply the GDPR pursuant to Art. 3(2) GDPR.</p>
+  <p>NOVEX INTERNATIONAL LLC, 3834 Powerline Road, Fort Lauderdale, FL 33309, USA, represented by Manuel Schuetterle, Managing Director. Contact: <a class="jsmail" href="#contact">[email address — please enable JavaScript]</a>. NOVEX INTERNATIONAL LLC is a limited liability company organized under the laws of the State of Florida, USA. To the extent we offer services to persons in the European Union, we apply the GDPR pursuant to Art. 3(2) GDPR.</p>
   <h4>Principle</h4>
   <p>This website does not use cookies, analytics or tracking. We collect only the data you actively submit through the contact form, plus technically required server logs.</p>
-  <h4>Server logs</h4>
-  <p>Our hosting provider automatically processes connection data (IP address, timestamp, requested resource, browser type) to deliver and secure the website. Legal basis: Art. 6(1)(f) GDPR (legitimate interest in secure operation). Logs are deleted within the provider’s standard retention period.</p>
+  <h4>Hosting and server logs</h4>
+  <p>This website is hosted by GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA (GitHub Pages). When you visit the site, GitHub automatically processes technical connection data: IP address, date and time of the request, requested resource (URL), referrer URL, browser type and operating system. This data is required to deliver the website and to ensure its security and stability. Legal basis: Art. 6(1)(f) GDPR (legitimate interest in the secure and reliable operation of the website). Log data is retained by GitHub only as long as technically necessary for these purposes and is then deleted or anonymized in accordance with GitHub’s retention practices. Transfers to the USA are safeguarded in particular by GitHub’s certification under the EU–US Data Privacy Framework and/or EU standard contractual clauses. Details: docs.github.com/pages and GitHub’s Privacy Statement.</p>
   <h4>Contact form</h4>
-  <p>Data submitted via the contact form (name, email, company, message) is processed solely to handle your inquiry. Legal basis: Art. 6(1)(b) GDPR (pre-contractual communication) and Art. 6(1)(f) GDPR. Submissions are processed by Formspree, Inc. (USA) as our processor; transfer to the USA is based on the EU standard contractual clauses and/or the EU–US Data Privacy Framework. Data is stored only as long as required to handle the inquiry and statutory retention periods.</p>
-  <h4>Web fonts</h4>
-  <p>This site loads the typeface Besley from Google Fonts (Google LLC, USA). When the page is opened, your IP address is transmitted to Google servers to deliver the font files. Legal basis: Art. 6(1)(f) GDPR (legitimate interest in uniform presentation). Details: policies.google.com/privacy.</p>
+  <p>If you use the contact form, we process the data you enter: name, email address, company (optional) and the content of your message. Purpose: handling and answering your inquiry and any resulting pre-contractual communication. Legal basis: Art. 6(1)(b) GDPR (steps prior to entering into a contract) and Art. 6(1)(f) GDPR (legitimate interest in responding to inquiries). Form submissions are technically processed on our behalf by Formspree, Inc., USA, acting as our service provider (processor); Formspree also performs automated spam screening of submissions, which may include a CAPTCHA check. Transfers to the USA are safeguarded by the EU standard contractual clauses and/or the EU–US Data Privacy Framework. We retain inquiry data only as long as needed to handle your request and any follow-up communication, and delete it thereafter unless statutory retention obligations apply.</p>
+  <h4>Web fonts (self-hosted)</h4>
+  <p>The typeface used on this website is hosted on our own infrastructure together with the website itself. No connection to Google Fonts or any other third-party font service is established when you visit this site.</p>
   <h4>Your rights (Art. 15–21 GDPR)</h4>
   <p>You have the right to access, rectification, erasure, restriction of processing, data portability and to object to processing based on legitimate interest. You may withdraw any consent at any time with future effect. You also have the right to lodge a complaint with a data protection supervisory authority in your EU member state.</p>
   <h4>No automated decision-making</h4>
@@ -823,6 +829,12 @@ footer{color:var(--muted);padding:0 var(--pad-x) 48px}
     es.forEach(function(e){e.target.classList.toggle('active',e.isIntersecting)});
   },{rootMargin:'-35% 0px -35% 0px'});
   document.querySelectorAll('.step').forEach(function(s){sio.observe(s)});
+
+  /* clickable email (assembled at runtime — not scrapeable from source) */
+  (function(){
+    var m=['contact','novex-international.com'].join('@');
+    document.querySelectorAll('.jsmail').forEach(function(a){a.href='mailto:'+m;a.textContent=m;});
+  })();
 
   document.querySelectorAll('[data-dlg]').forEach(function(b){
     b.addEventListener('click',function(){
