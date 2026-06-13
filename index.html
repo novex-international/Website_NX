@@ -680,14 +680,15 @@ footer{color:var(--muted);padding:0 var(--pad-x) 48px}
 <section id="contact" class="section">
   <div class="aurora dim" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="wrap">
-    <div class="rule reveal"><span>contact</span></div>
+    <div class="rule reveal"><span>let’s talk</span></div>
     <div class="cols">
       <div>
         <h2 class="reveal d1">Let’s build something that <em>lasts.</em></h2>
-        <p class="body-copy reveal d2">If you are building a venture, scaling a system or looking for a strategic partner who masters both the human and the technical game — let’s talk.</p>
+        <p class="body-copy reveal d2">If you are an OE manufacturer, Independent Aftermarket brand or marketplace seller looking for an experienced partner in e-commerce, catalog data or product imagery — we want to hear from you.</p>
+        <p class="response-note reveal d2">We reply to every serious inquiry within 24 hours.</p>
         <div class="c-list">
           <div class="c-row reveal"><span>Company</span>NOVEX INTERNATIONAL LLC · Florida, USA</div>
-          <div class="c-row reveal d1"><span>Contact</span>Exclusively via the inquiry form — we reply to every serious request.</div>
+          <div class="c-row reveal d1"><span>Contact</span>Exclusively via the inquiry form below.</div>
           <div class="c-row reveal d2"><span>Ventures</span><a href="https://www.oaza-mira.app" target="_blank" rel="noopener">oaza-mira.app</a> &nbsp;·&nbsp; <a href="https://sync-nx.co" target="_blank" rel="noopener">sync-nx.co</a></div>
         </div>
       </div>
@@ -696,8 +697,20 @@ footer{color:var(--muted);padding:0 var(--pad-x) 48px}
         <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
         <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
         <div class="field"><label for="f-company">Company <span style="opacity:.6">(optional)</span></label><input id="f-company" name="company" type="text" autocomplete="organization"></div>
+        <div class="field-topic">
+          <label>How can we help? <span style="opacity:.6">(optional)</span></label>
+          <div class="topic-chips">
+            <button type="button" class="chip" data-value="Automotive E-Commerce">Automotive E-Commerce</button>
+            <button type="button" class="chip" data-value="Product Imagery">Product Imagery</button>
+            <button type="button" class="chip" data-value="API &amp; Systems Integration">API &amp; Systems Integration</button>
+            <button type="button" class="chip" data-value="Advisory / Workshops">Advisory / Workshops</button>
+            <button type="button" class="chip" data-value="Something else">Something else</button>
+          </div>
+          <input type="hidden" name="topic" id="f-topic">
+        </div>
         <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" required></textarea></div>
         <button class="btn btn-solid" type="submit">Send inquiry <span class="arr" aria-hidden="true">→</span></button>
+        <p class="form-fine">No spam. No automated replies. A real response to a real inquiry.</p>
         <p id="form-note" role="status" aria-live="polite">Thank you — your message has been prepared. We will get back to you shortly.</p>
       </form>
     </div>
@@ -861,6 +874,15 @@ footer{color:var(--muted);padding:0 var(--pad-x) 48px}
   });
   document.querySelectorAll('dialog [data-close]').forEach(function(b){
     b.addEventListener('click',function(){b.closest('dialog').close()});
+  });
+
+  /* topic chip selector */
+  document.querySelectorAll('.chip').forEach(function(chip){
+    chip.addEventListener('click',function(){
+      document.querySelectorAll('.chip').forEach(function(c){c.classList.remove('selected')});
+      chip.classList.add('selected');
+      document.getElementById('f-topic').value=chip.getAttribute('data-value');
+    });
   });
 
   var form=document.getElementById('cform');
